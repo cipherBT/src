@@ -1,4 +1,4 @@
-# 🛡️ Real-Time Credit Card Fraud Detection Pipeline
+# Real-Time Credit Card Fraud Detection Pipeline
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
 ![Docker](https://img.shields.io/badge/Docker-Microservices-2496ED?logo=docker)
@@ -12,7 +12,7 @@ An end-to-end, massively parallelized machine learning architecture that simulat
 
 ---
 
-## 🏗️ High-Level Microservice Architecture
+## High-Level Microservice Architecture
 
 The underlying system is a fully dockerized, deeply integrated microservice mesh consisting of 5 distinct processing tiers communicating over Docker Networking bridges.
 
@@ -49,7 +49,7 @@ graph TD
 
 ---
 
-## ⚙️ How It Works Under the Hood
+## ⚙️How It Works Under the Hood
 
 ### 1. Advanced Data Engineering
 Transforms heavy Kaggle datasets down by extracting Unix timestamps into semantic variables (e.g., `is_weekend`, `is_night`), and using vectorized **Haversine formula math** to identify massive state-line geographic purchase deviations (`distance_km`).
@@ -68,7 +68,7 @@ Because reviewing terminal JSON data arrays is miserable, a massive `Streamlit` 
 
 ---
 
-## 🚀 Getting Started (Run Locally)
+## Getting Started (Run Locally)
 
 ### Prerequisites:
 - `Docker Desktop` (Allocated with a minimum of 6GB RAM)
@@ -77,7 +77,20 @@ Because reviewing terminal JSON data arrays is miserable, a massive `Streamlit` 
 ### Installation & Bootup:
 
 **Step 1. Clone & Set your passwords**
-Create a `.env` file containing your Confluent Cloud Kafka credentials in the root directory.
+Create a `.env` file in the root directory with the following skeleton containing your Confluent Cloud Kafka credentials:
+
+```env
+AWS_ACCESS_KEY_ID=minio
+AWS_SECRET_ACCESS_KEY=minio123
+MINIO_USERNAME=minio
+MINIO_PASSWORD=minio123
+AIRFLOW_UID=100
+
+KAFKA_BOOTSTRAP_SERVERS=
+KAFKA_TOPIC=transactions
+KAFKA_PASSWORD=
+KAFKA_USERNAME=
+```
 
 **Step 2. Run the Initial Preprocessing Script**
 ```bash
@@ -93,9 +106,7 @@ All 12+ containers (Postgres, Minio, Airflow, MLflow, Spark, Streamlit) will bin
 
 ---
 
-## 🕹️ Operations & Dashboard Cheat-Sheet
-
-You very rarely execute Python files locally; you command the Docker cluster instead.
+## Operations & Dashboard Cheat-Sheet
 
 - **The Interactive Predictor UI**: `http://localhost:8501` (Create and inject custom transactions to test algorithms manually).
 - **The Airflow Orchestrator**: `http://localhost:8080` (Manage Celery worker health and execute `fraud_detection_training` DAGs).
