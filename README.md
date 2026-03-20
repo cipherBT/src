@@ -1,4 +1,4 @@
-# Real-Time Credit Card Fraud Detection Pipeline
+# Real-Time Credit Card Fraud Detection Pipeline/Architecture
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
 ![Docker](https://img.shields.io/badge/Docker-Microservices-2496ED?logo=docker)
