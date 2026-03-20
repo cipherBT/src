@@ -92,13 +92,17 @@ KAFKA_PASSWORD=
 KAFKA_USERNAME=
 ```
 
-**Step 2. Run the Initial Preprocessing Script**
+**Step 2. Download the Dataset**
+Download the [Credit Card Fraud Detection Dataset from Kaggle](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud/data).
+Extract the downloaded archive and place the `creditcard.csv` file inside a directory named `FraudDataset` in the root of the project.
+
+**Step 3. Run the Initial Preprocessing Script**
 ```bash
 cd preprocessing
 python preprocess_data.py --input-dir ../FraudDataset --output-dir ../data/processed
 ```
 
-**Step 3. Initiate the Docker Ecosystem**
+**Step 4. Initiate the Docker Ecosystem**
 ```bash
 docker-compose up --build -d
 ```
