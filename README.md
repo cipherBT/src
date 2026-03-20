@@ -117,3 +117,10 @@ All 12+ containers (Postgres, Minio, Airflow, MLflow, Spark, Streamlit) will bin
 - **The MLflow Experiment Tracker**: `http://localhost:5500` (Review historical ROC curves, Precision charts, and compare algorithm iterations over time).
 - **Monitor the Kafka Producer**: `docker-compose logs -f producer` (Spits logs aggressively every 1,000 transactions).
 - **Smooth Shutdown Core**: `docker-compose down` (Safely halts all Celery workers and Spark streams without destroying the PostgreSQL metadata).
+
+---
+
+## 🛑 Bug Fixes & Operations History
+
+Throughout the structural development and scaling of this pipeline, I documented and overcame massive bottlenecks including Docker OOM crashes, Kafka schema desyncs, and PySpark threshold constraints. 
+Read the full deep-dive in our centralized **[Operations & Incident Debugging History](debugging_history.md)** log.
